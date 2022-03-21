@@ -13,7 +13,21 @@ const init = async() => {
 
     mapSingers(singers)
 
-   
+
+    const card = document.querySelectorAll('.songs');
+
+    console.log(card);
+
+    for(let i = 0; i < card.length; i++){
+
+
+        card[i].addEventListener('click', function() {
+            card[i].classList.toggle('is-flipped');
+          });
+
+    }
+    
+
 
     
 }
@@ -71,19 +85,32 @@ const mapSingers = (singers)=> {
 
 
  
- const paintSingers = (singer) => {
+
+
+
+  const paintSingers = (singer) => {
 
     let container = document.querySelector('#singersContainer')
  
-    container.innerHTML += `<div class="songs">
+    container.innerHTML += `<div >
+    <div class="songs">
+    <div class="singerFront  backFront" >
     <h1 class="singerName">${singer.name}</h1> 
     <img class="image" src=${singer.img}  alt="singerImage">
     <h2 class="singerYear">Country:   ${singer.country}</h2> 
    <h2 class="songStyle">Age:  ${singer.age}</h2> 
-   <h2 class="songName">Song:   ${singer.songs[0].name}</h2>
+    </div>
+    <div class="songsBack  backFront">
+    <h2 class="songName">Song:   ${singer.songs[0].name}</h2>
    <h2 class="songYear">Releasing year:   ${singer.songs[0].year}</h2> 
    <h2 class="songStyle">Song style:   ${singer.songs[0].style}</h2> 
+    </div>
+   </div>
+    
     </div>`
  
     
   }
+
+
+
