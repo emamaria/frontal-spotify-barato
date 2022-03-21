@@ -49,19 +49,7 @@ const getSingers = async()=> {
 }
 
 
-const getSongs = async()=> {
 
-    
-      
-    let songs = await fetch(`https://spotify-barato2.vercel.app/api/songs`)
-
-    let resultSongs =  await songs.json()
-
-
-   return  resultSongs 
-
-
-}
 
 
 
