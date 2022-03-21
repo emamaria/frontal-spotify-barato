@@ -1,0 +1,44 @@
+body {
+  font-size: 10px;
+  background-color: #212121;
+}
+
+#singersContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  /* border: 2px solid red; */
+}
+
+.songs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #1db954;
+  margin: 10px;
+  width: 300px;
+  height: 450px;
+  background-color: #191414;
+  border-radius: 15px;
+  color: white;
+}
+
+.image {
+  max-width: 90%;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+
+#spotify-image {
+  width: 300px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.spotyheader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
