@@ -66,3 +66,16 @@ body {
 .songsBack {
   transform: rotateY(180deg);
 }
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  margin: 3%;
+  flex-direction: column;
+}
+
+#searchInput {
+  width: 45%;
+  height: 25px;
+  border-radius: 20px;
+}

@@ -1,5 +1,11 @@
+
+let singerList = [];
+
 window.onload = function(){
     init()
+
+    const input$$ = document.querySelector("#searchInput")
+    input$$.addEventListener("input", ()=> searchSingers()) 
 
   
 }
@@ -13,19 +19,14 @@ const init = async() => {
 
     mapSingers(singers)
 
+   singerList = [...singers];
 
-    const card = document.querySelectorAll('.songs');
-
-    console.log(card);
-
-    for(let i = 0; i < card.length; i++){
+  
 
 
-        card[i].addEventListener('click', function() {
-            card[i].classList.toggle('is-flipped');
-          });
+    flip()
 
-    }
+   
     
 
 
@@ -100,5 +101,47 @@ const mapSingers = (singers)=> {
     
   }
 
+
+
+  const flip = () => {
+
+
+    const card = document.querySelectorAll('.songs');
+
+    console.log(card);
+  
+    for(let i = 0; i < card.length; i++){
+  
+  
+        card[i].addEventListener('click', function() {
+            card[i].classList.toggle('is-flipped');
+          });
+  
+    }
+
+  }
+
+ 
+
+
+ 
+
+  const searchSingers = () => {
+    const input = document.querySelector('#searchInput');
+    console.log(input.value.toLocaleLowerCase())
+    console.log("singerlist", singerList);
+   
+    let container = document.querySelector("#singersContainer");
+
+    container.innerHTML = "";
+    const filterSinger = singerList.filter(singer =>(singer.name.toLowerCase().includes(input.value.toLowerCase())))
+    mapSingers(filterSinger)
+
+
+    flip()
+
+ 
+
+}
 
 
